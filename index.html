@@ -28,9 +28,116 @@
 <meta name="og:country-name" content="Nepal"/>
 
 
-<meta name=viewport content='width=700'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
     
- body {background-color: black;
+body {
+  background-color: black;
      }
+     
+     .denied {
+ text-align: center;
+font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 3vw;;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #000, #fff, #000);
+-webkit-background-clip: text;
+-webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.img {
+  height: auto;
+}
+
+ @media screen and (max-width: 600px) {
+ 
+.img{
+	display: none;
+  }
+}
+
+
+.timee {
+	
+text-align: center;
+font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+  
+  
+}
+ #timer {
+  font-size: 4vw;
+  font-weight: 100;
+  color: #fff;
+  text-shadow: 0 0 20px #48C8FF;
+}
+#timer div {
+  display: inline-block;
+  min-width: 90px;
+}
+#timer div span {
+  color: #B1CDF1;
+  display: block;
+  font-size: .35em;
+  font-weight: 400;
+}
+
+#since { 
+  color: #B1CDF1;
+  display: block;
+  font-size: .35em;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-shadow: 0 0 10px #48C8FF;
+
+}
+  </style>
+<script>
+     function updateTimer() {
+	// yyyy-MM-dd HH:mm:ss
+  past  = Date.parse("2018-07-26 00:00:00");
+  now     = new Date();
+  diff    = now - past;
+
+
+  days   = Math.floor( diff / (1000*60*60*24) );
+  hours  = Math.floor( diff / (1000*60*60) );
+  mins   = Math.floor( diff / (1000*60) );
+  secs   = Math.floor( diff / 1000 );
+
+ 
+  d = days;
+  h = hours  - days   * 24;
+  m = mins   - hours  * 60;
+  s = secs   - mins   * 60;
+  document.getElementById("timer")
+    .innerHTML =
+      '<div><span>Days without JUSTICE for Nirmala Panta:</span></div><br>'+
+    
+      '<div>' + d + '<span>days</span></div>' +
+      '<div>' + h + '<span>hours</span></div>' +
+      '<div>' + m + '<span>minutes</span></div>' +
+      '<div>' + s + '<span>seconds</span></div>' ;
+}
+setInterval('updateTimer()', 1000 );
+  </script>
+  </head>
+  <body>
+     <div class="denied">
+    Justice delayed is justice denied
+</div>
+<br>
+<div class="img">
+<img src="http://sentinelnepal.com/nir.png" width= "200px" style="float:left;">
+
+<img src="http://sentinelnepal.com/nirm.png" width= "200px" style="float:right;">
+</div>
+
+<div class="timee">
+<div id="timer"></div>
+</div>
+    
+
+    </body>
+</html>
