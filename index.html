@@ -28,15 +28,20 @@
 <meta name="og:country-name" content="Nepal"/>
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <link rel="shortcut icon" type="image/png" href="opnep.jpeg">
     <style>
     
 body {
   background-color: black;
+   text-decoration: none;
+  color: red;
      }
      
+a:focus {outline: none;}
      .denied {
+          padding-top: 25px;
  text-align: center;
 font-family: sans-serif;
   text-transform: uppercase;
@@ -47,15 +52,44 @@ font-family: sans-serif;
 -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
+
 .img {
+  max-width: 100%;
+  height: auto;
+}
+.imgg {
+  max-width: 100%;
   height: auto;
 }
 
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 800px) {
  
 .img{
 	display: none;
   }
+}
+
+
+
+ @media screen and (max-width: 400px) {
+ 
+.img{
+	display: none;
+  }
+   .imgg{
+	display: none;
+  }
+
+}
+
+
+
+@media screen and (min-width: 800px) {
+ 
+.imgg{
+	display: none;
+  }
+
 }
 
 
@@ -92,6 +126,23 @@ font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
   text-shadow: 0 0 10px #48C8FF;
 
 }
+.containeee {
+ 
+   height: 200px;
+  position: relative;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.scandle{
+    font-size: 5vw;
+      color: white;
+  position: absolute;
+  top: 50%;
+  
+    
+}
   </style>
 <script>
      function updateTimer() {
@@ -124,20 +175,73 @@ setInterval('updateTimer()', 1000 );
   </script>
   </head>
   <body>
-     <div class="denied">
+   
+    <div class="denied">
     Justice delayed is justice denied
 </div>
-<br>
-<div class="img">
-<img src="http://sentinelnepal.com/nir.png" width= "200px" style="float:left;">
 
-<img src="http://sentinelnepal.com/nirm.png" width= "200px" style="float:right;">
+<div class="img">
+<img src="https://opnep.github.io/nir.png" width= "200px" style="float:left;">
+
+<img src="https://opnep.github.io/nirm.png" width= "200px" style="float:right;">
+</div>
+
+
+<div class="imgg">
+<img src="https://opnep.github.io/nir.png" width= "100px" style="float:left;">
+
+<img src="https://opnep.github.io/nirm.png" width= "100px" style="float:right;">
 </div>
 
 <div class="timee">
 <div id="timer"></div>
-</div>
+</div><br><br>
+  <div class="containeee">
+<div class="scandle">
+<hr><div id="textslide"></div><hr>
+</div></div>
+<script>
+  
+   var quotes = [
+        "Melamchi",
+        "33 Kilos Gold",
+        "NCELL Tax",
+             "Wide-Body",
+        "MCC",
     
+        "Swiss Bank",
+     "Brirish-irgin Island",
+     
+        "Nirmala",
+        "Namita-Sunita",
+        "Prabin Gurung",
+     "Dasdhunga Prakaran",
+        "Royal Massacre",
+     
+             "Kalapani-Lipulekh",
+        "Koshi Treaty",
+        "Sugauli Treaty",
 
+
+     
+        "17K Kills",
+        "Mohora",
+       
+        "Indian Embassy",
+        ];
+        
+        var i = 0;
+        
+        setInterval(function() {
+            $("#textslide").html(quotes[i]);
+            if (i == quotes.length)
+                i=0;
+            else
+                i++;
+        }, 1 * 1000);
+
+
+    
+</script>
     </body>
 </html>
