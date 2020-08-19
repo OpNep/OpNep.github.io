@@ -758,36 +758,7 @@ ul li{
 setInterval('updateTimer()', 1000 );
 
   </script>
-	<script>
-		// POP UP FUNCTION
-let popUp = document.getElementById("myWrapper");
-setTimeout(() => {
-  popUp.style.display = "flex";
-}, 2000);
-
-//or without timeline wrapper.style.display = "flex";
-
-document.getElementById("close").addEventListener("click", function () {
-  popUp.style.display = "none";
-});
-
-// OVERLAY FUNCTION
-
-let overlay = document.getElementById("myOverlay");
-setTimeout(() => {
-  overlay.style.display = "flex";
-}, 2000);
-
-document.getElementById("close").addEventListener("click", function () {
-  overlay.style.display = "none";
-});
-
-/*let popUp = document.querySelectorAll("#myWrapper, #myOverlay");
-setTimeout(() => {
-  popUp.style.display = "flex";
-}, 2000); NOT VALID?*/
-
-	</script>
+	
   </head>
   <body>
 	  
@@ -1001,6 +972,36 @@ function hideChat(hide) {
 }
 
 	  </script>
+	  <script>
+		// POP UP FUNCTION
+let popUp = document.getElementById("myWrapper");
+setTimeout(() => {
+  popUp.style.display = "flex";
+}, 2000);
+
+//or without timeline wrapper.style.display = "flex";
+
+document.getElementById("close").addEventListener("click", function () {
+  popUp.style.display = "none";
+});
+
+// OVERLAY FUNCTION
+
+let overlay = document.getElementById("myOverlay");
+setTimeout(() => {
+  overlay.style.display = "flex";
+}, 2000);
+
+document.getElementById("close").addEventListener("click", function () {
+  overlay.style.display = "none";
+});
+
+/*let popUp = document.querySelectorAll("#myWrapper, #myOverlay");
+setTimeout(() => {
+  popUp.style.display = "flex";
+}, 2000); NOT VALID?*/
+
+	</script>
 	
     </body>
 </html>
