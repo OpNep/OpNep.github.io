@@ -58,6 +58,127 @@ font-family: sans-serif;
 }
 
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.popUp {
+  position: relative;
+  top: 20%;
+    margin-left: auto;
+  margin-right: auto;
+    align-items: center;
+  height: 400px;
+  width: auto;
+  overflow: auto;
+  display: flex;
+  background-image: url();
+  z-index: 200;
+}
+
+.content {
+  animation-delay: 0.3s;
+  position: relative;
+ margin-left: auto;
+  margin-right: auto;
+    align-items: center;
+  z-index: 200;
+}
+
+.popUp h1 {
+  color: black;
+}
+
+.popUp p {
+  width: 280px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: white;
+  font-weight: 400;
+  background-color: rgba(17, 56, 113, 0.7);
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.bg {
+  display: inline-block;
+  color: #fff;
+  background: #113871;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.7em;
+  margin-top: 20px;
+}
+.button {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 10px;
+}
+
+.button a {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  font-size: 11px;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 3px solid #d8c12e;
+  font-weight: bold;
+    background: #113871;
+ 
+}
+
+.button a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 0%;
+  background: #113871;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.3s ease-in-out;
+  transform: skew(-25deg);
+  transform-origin: right;
+}
+
+.button a:hover:after {
+  width: 150%;
+  left: -10px;
+  transform-origin: left;
+}
+
+.button a:hover {
+  color: #000000;
+  transition: all 0.5s ease;
+}
+
+.button a:nth-of-type(1) {
+  border-radius: 50px 0 0 50px;
+  border-right: none;
+}
+
+.button a:nth-of-type(2) {
+  border-radius: 0px 50px 50px 0;
+}
+
+.popUp {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+	    
 .img {
   max-width: 100%;
   height: auto;
@@ -637,9 +758,55 @@ ul li{
 setInterval('updateTimer()', 1000 );
 
   </script>
+	<script>
+		// POP UP FUNCTION
+let popUp = document.getElementById("myWrapper");
+setTimeout(() => {
+  popUp.style.display = "flex";
+}, 2000);
+
+//or without timeline wrapper.style.display = "flex";
+
+document.getElementById("close").addEventListener("click", function () {
+  popUp.style.display = "none";
+});
+
+// OVERLAY FUNCTION
+
+let overlay = document.getElementById("myOverlay");
+setTimeout(() => {
+  overlay.style.display = "flex";
+}, 2000);
+
+document.getElementById("close").addEventListener("click", function () {
+  overlay.style.display = "none";
+});
+
+/*let popUp = document.querySelectorAll("#myWrapper, #myOverlay");
+setTimeout(() => {
+  popUp.style.display = "flex";
+}, 2000); NOT VALID?*/
+
+	</script>
   </head>
   <body>
 	  
+ <div class="overlay" id="myOverlay">
+      <div class="popUp" id="myWrapper">
+        <div class="content animated fadeInLeft">
+          <span class="bg animated fadeInDown">Mongolhop- Deshdrohi</span>
+      
+          <p>Ofcourse, we won't tolerate that terrorism act.</p>
+		<p>As mentioned in दफा १५१ in <a href="https://www.nepalpolice.gov.np/images/general_notice/muluki_aparadh_ain_2074.pdf" target="_blank">मुलुकी अपराध संहिता, २०७४</a>, the culprit shall be punished with 3 years prison or 30 thousand penalty or both </p>
+		<p>Since out goverment has already caught one of the terrorist</p>
+          <div class="button">
+           
+            <a href="#" id="close">✕</a><a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i>CLOSE</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
   <div class="denied">
     Justice delayed is justice denied
 </div>
